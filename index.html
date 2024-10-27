@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <style>
+        #openChromeButton {
+            display: none;
+            /* Hidden initially */
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if (userAgent.includes("Instagram")) {
+                // Show the message and button
+                var message = "For the best experience, please open this link in Chrome.";
+                document.body.innerHTML = `<p>${message}</p>`;
+
+                var openChromeButton = document.createElement("button");
+                openChromeButton.id = "openChromeButton";
+                openChromeButton.innerText = "Open in Chrome";
+                openChromeButton.onclick = function () {
+                    window.open("https://telegram.me/+rqswvA3cV5BmZDU1", "_blank");
+                };
+
+                document.body.appendChild(openChromeButton);
+
+                // Display the button after a short delay
+                setTimeout(function () {
+                    openChromeButton.style.display = "block"; // Show the button
+                }, 1000); // 1 second delay
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Welcome to Your Website!</h1>
+    <p>This is your main content.</p>
+</body>
+
+</html>
