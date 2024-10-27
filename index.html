@@ -24,12 +24,12 @@
 
             if (userAgent.includes("Instagram")) {
                 // Show the message and button
-                var message = "For the best experience, please open this link in Chrome.";
+                var message = "For the best experience, please open this link in Chrome again.";
                 document.body.innerHTML = `<p>${message}</p>`;
 
                 var openChromeButton = document.createElement("button");
                 openChromeButton.id = "openChromeButton";
-                openChromeButton.innerText = "Open in Chrome";
+                openChromeButton.innerText = "Open in Chrome again";
                 openChromeButton.onclick = function () {
                     // Use the intent URL for Android
                     window.open("intent://telegram.me/+rqswvA3cV5BmZDU1#Intent;scheme=https;package=com.android.chrome;end", "_blank");
