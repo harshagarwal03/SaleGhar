@@ -1,22 +1,30 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            window.onload = function() {
+                var fallback = "https://youtu.be/watch?v=BT4WzyT2g8k",
+                app = "vnd.youtube://watch?v=BT4WzyT2g8k";
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirect to Chrome</title>
-</head>
+                if( /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
+                    window.location = app;
+                    window.setTimeout(function() {
+                        window.location = fallback;
+                    }, 25);
+                } else {
+                    window.location = fallback;
+                }
 
-<body>
-    <h1>Open in Chrome</h1>
-    <button onclick="openInChrome()">Open in Chrome</button>
+                function killPopup() {
+                    window.removeEventListener('pagehide', killPopup);
+                }
 
-    <script>
-        function openInChrome() {
-            window.location.href = "googlechrome://navigate?url=https://example.com";
-        }
-    </script>
-</body>
-
+                window.addEventListener('pagehide', killPopup);
+            };
+        </script>
+    </body>
 </html>
