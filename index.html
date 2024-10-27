@@ -31,7 +31,8 @@
                 openChromeButton.id = "openChromeButton";
                 openChromeButton.innerText = "Open in Chrome";
                 openChromeButton.onclick = function () {
-                    window.open("https://telegram.me/+rqswvA3cV5BmZDU1", "_blank");
+                    // Use the intent URL for Android
+                    window.open("intent://telegram.me/+rqswvA3cV5BmZDU1#Intent;scheme=https;package=com.android.chrome;end", "_blank");
                 };
 
                 document.body.appendChild(openChromeButton);
